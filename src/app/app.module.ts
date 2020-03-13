@@ -10,7 +10,7 @@ import { SobreComponent } from './institucional/sobre/sobre.component';
 import { RouterModule } from '@angular/router';
 import { rootRouterConfig } from './app.routes';
 import { DataBindComponent } from './demos/data-bind/data-bind.component';
-
+import { FormsModule} from "@angular/forms";
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,6 +23,7 @@ import { DataBindComponent } from './demos/data-bind/data-bind.component';
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     [RouterModule.forRoot(rootRouterConfig, {useHash:false})]
   ],
   providers: [],
