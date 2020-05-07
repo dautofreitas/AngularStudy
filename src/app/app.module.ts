@@ -1,6 +1,7 @@
+import { ProdutoService } from './produtos/produtos.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import {HttpClientModule} from '@angular/common/http'
 import { AppComponent } from './app.component';
 import { MenuComponent } from './navegacao/menu/menu.component';
 import { HomeComponent } from './navegacao/home/home.component';
@@ -11,6 +12,8 @@ import { RouterModule } from '@angular/router';
 import { rootRouterConfig } from './app.routes';
 import { DataBindComponent } from './demos/data-bind/data-bind.component';
 import { FormsModule} from "@angular/forms";
+import { APP_BASE_HREF } from '@angular/common';
+import { ListaProdutoComponent } from './produtos/lista-produto/lista-produto.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,14 +22,19 @@ import { FormsModule} from "@angular/forms";
     FooterComponent,
     ContatoComponent,
     SobreComponent,
-    DataBindComponent
+    DataBindComponent,
+    ListaProdutoComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    HttpClientModule,
     [RouterModule.forRoot(rootRouterConfig, {useHash:false})]
   ],
-  providers: [],
+  providers: [
+    ProdutoService,
+    {provide:APP_BASE_HREF, useValue:'/'}  
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
