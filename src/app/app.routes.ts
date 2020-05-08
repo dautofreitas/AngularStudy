@@ -7,11 +7,13 @@ import { DataBindComponent } from './demos/data-bind/data-bind.component';
 
 export const rootRouterConfig:Routes=
 [
-    {path:'',redirectTo:'/home',pathMatch:'full'},
+    {path:'',redirectTo:'/home',pathMatch:'full'},   
     {path:"home",component:HomeComponent},
     {path:"contato",component:ContatoComponent},
     {path:"sobre",component:SobreComponent},
     {path:"feature-data-bind",component:DataBindComponent},
     {path:"produtos",component:ListaProdutoComponent},
-    {path:"produto-detalhe/:id",component:ListaProdutoComponent}
+    {path:"produto-detalhe/:id",component:ListaProdutoComponent},
+    {path:'**',redirectTo:'/home',pathMatch:'full'}//Error 404
+    
 ];

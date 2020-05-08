@@ -19,7 +19,9 @@ export class ListaProdutoComponent implements OnInit {
         this.produtos = produtos;
         console.log(produtos);
       },
-      error=> console.log(error)
+      error=> {
+        return console.log(error);
+      }
     );
   }
 

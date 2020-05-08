@@ -2,6 +2,10 @@ import { ProdutoService } from './produtos/produtos.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {HttpClientModule} from '@angular/common/http'
+import {registerLocaleData} from '@angular/common';
+import localPt from '@angular/common/locales/pt';
+registerLocaleData(localPt);
+
 import { AppComponent } from './app.component';
 import { MenuComponent } from './navegacao/menu/menu.component';
 import { HomeComponent } from './navegacao/home/home.component';
