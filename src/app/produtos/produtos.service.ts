@@ -12,6 +12,6 @@ export class ProdutoService
 
     obterProdutos(): Observable<Produto[]>
     {
-        return this.http.get<Produto[]>(this.UrlServiceV1 + 'produtos');
+        return this. http.get<Produto[]>(this.UrlServiceV1 + 'produtos');
     }
 }
